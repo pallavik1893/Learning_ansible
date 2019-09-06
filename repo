@@ -1,0 +1,32 @@
+t clone https://github.com/pallavik1893/Learning_ansible.git
+   27  2019-09-06 16:01:28 cd Learning_ansible/
+   28  2019-09-06 16:02:50 ansible localhost -m command "echo 'Ansible is awesome' > ./motd"
+   29  2019-09-06 16:03:21 ansible localhost -m command -a "echo 'Ansible is awesome' > ./motd"
+   30  2019-09-06 16:03:41 history
+   31  2019-09-06 16:04:47 ansible -m lineinfile -a "path=./motd regexp=awesome line=superawesome"
+   32  2019-09-06 16:05:26 ansible localhost -m lineinfile -a "path=./motd regexp=awesome line=justawesome"
+   33  2019-09-06 16:06:33 ansible localhost -m lineinfile -a "path=./motd regexp=awesome line=superawesome"
+   34  2019-09-06 16:06:49 ll
+   35  2019-09-06 16:07:05 vim motd
+   36  2019-09-06 16:07:15 ansible localhost -m command -a "echo 'Ansible is awesome' > ./motd"
+   37  2019-09-06 16:07:17 ll
+   38  2019-09-06 16:07:21 ls
+   39  2019-09-06 16:09:12 ansible localhost -m command -a "echo 'Ansible is awesome' > ./motd"
+   40  2019-09-06 16:09:27 cat ./motd
+   41  2019-09-06 16:09:53 ansible localhost -m command -a "echo "Ansible is awesome" > ./motd"
+   42  2019-09-06 16:10:32 ansible localhost -m command -a "wall "Ansible is awesome" > ./motd"
+   43  2019-09-06 16:10:41 ansible localhost -m command -a "wall 'Ansible is awesome' > ./motd"
+   44  2019-09-06 16:10:48 ls
+   45  2019-09-06 16:10:50 ll
+   46  2019-09-06 16:11:23 ansible localhost -m command -a "echo 'Ansible is awesome' > ./abc"
+   47  2019-09-06 16:11:25 ls
+   48  2019-09-06 16:12:12 ansible localhost -m command -a "echo 'Ansible is awesome' >> ./abc"
+   49  2019-09-06 16:12:16 ll
+   50  2019-09-06 16:12:32 cat ./abc
+   51  2019-09-06 16:13:17 ansible localhost -m command -a "echo 'Ansible is awesome'" >> ./abc
+   52  2019-09-06 16:13:20 ll
+   53  2019-09-06 16:14:09 cat abc 
+   54  2019-09-06 16:14:49 ansible localhost -m lineinfile -a "path=./motd regexp=awesome line=superawesome"
+   55  2019-09-06 16:14:58 ansible localhost -m lineinfile -a "path=./abc regexp=awesome line=superawesome"
+   56  2019-09-06 16:15:02 cat abc
+
