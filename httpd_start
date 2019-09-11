@@ -1,0 +1,42 @@
+vim http.yml 
+    4  2019-09-06 16:44:12 ansible-playbook http.yml --syntax.check
+    5  2019-09-06 16:44:24 ansible-playbook http.yml --syntax-check
+    6  2019-09-06 16:44:46 vim http.yml 
+    7  2019-09-06 16:53:25 ansible-playbook http.yml --syntax-check
+    8  2019-09-06 16:53:35 vim http.yml 
+    9  2019-09-06 16:53:49 ansible-playbook http.yml --syntax-check
+   10  2019-09-06 16:53:55 vim http.yml 
+   11  2019-09-06 16:54:34 vim inventory.yml
+   12  2019-09-06 16:56:18 ansible dev -m ping -i inventory
+   13  2019-09-06 16:56:26 ansible dev -m ping -i inventory.yml 
+   14  2019-09-06 16:57:52 ansible-playbook http.yml -i inventory.yml 
+   15  2019-09-06 16:58:47 vim http.yml 
+   16  2019-09-06 16:59:21 ansible-playbook http.yml -i inventory.yml 
+    vim http.yml 
+    ansible-playbook http.yml -i inventory.yml 
+
+
+Yml file for installing http
+---
+- name: Installing http
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Install http package
+    yum:
+      name: httpd
+      state: present
+
+
+  - name: Start httpd service
+    service:
+      name: httpd
+      state: started
+
+
+
+Yml file for inventory
+
+dev]
+localhost ansible_connection=local
+
