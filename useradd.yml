@@ -21,4 +21,15 @@
        owner: root
        group: root
        mode: '0644'
+   - name: change file ownership, group and permissions
+     file:
+       path: /tmp/abc.tmp
+       owner: pallavi
+       group: pallavi
+       state: touch
+   - name: touch the file and add/remove some permissions
+     file:
+       path: /tmp/anu.tmp
+       state: touch
+       mode: u+rw,g-wx,o-rwx
   
